@@ -10,7 +10,7 @@ from random import random
 def Sigmoid(activation, response=1):
     return 1/(1 + exp(-activation/response))
 
-class pyNeuralNet:
+class wulfNeuralNet:
     def __init__(self, NumInputs, NumOutputs, NumHiddenLayers, NeuronPerHiddenLyr):
         self.Layers = array([[[random()]*(NumInputs+1)]*NeuronPerHiddenLyr]*NumHiddenLayers)
     def Update(self, inputs):
@@ -37,5 +37,5 @@ class pyNeuralNet:
         return array(outputs)
 
 if __name__ == "__main__":
-    nn = pyNeuralNet(3,3,9,3)
+    nn = wulfNeuralNet(3,3,9,3)
     print(nn.Update(array([0.5,0.8,0.5])))
